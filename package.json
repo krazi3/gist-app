@@ -1,0 +1,19 @@
+{
+  "name": "gist-app",
+  "version": "0.0.1",
+  "description": "A sample app to query and view github gists",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krazi3/gist-app.git"
+  },
+  "author": "Awwab Ul Haq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krazi3/gist-app/issues"
+  },
+  "homepage": "https://github.com/krazi3/gist-app#readme"
+}
