@@ -49,9 +49,21 @@ export default class Item extends Component {
         </a>
         &nbsp;&nbsp;
         {this.renderTags(gist.files)}
-        <ul>
-          {this.state.forks.map(fork => <li>{fork.owner.login}</li>)}
-        </ul>
+        {this.state.forks.length ? (
+          <div style={{marginTop: 15}}>
+            <span className="text-bold">Recent Forks</span>
+            <ul className="list-style-none" style={{marginTop: 10}}>
+              {this.state.forks.map(fork => (
+                <li style={{display: 'inline-block'}}>
+                  <img className="avatar avatar-small" width="32" height="32" src={fork.owner.avatar_url}/>
+                  &nbsp;
+                  <a href={fork.html_url} style={{color: '#424242'}}>{fork.owner.login}</a>
+                  &nbsp;&nbsp;
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </li>
     )
   }
