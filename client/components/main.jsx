@@ -50,7 +50,7 @@ export default class Main extends Component {
           this.state.gists.length ? (
             <div className="Box" style={{marginBottom: 20}}>
               <ul>
-                {this.state.gists.map(gist => <Item gist={gist}/>)}
+                {this.state.gists.map((gist, index) => <Item key={index} gist={gist}/>)}
               </ul>
             </div>
           ) : (

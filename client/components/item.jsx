@@ -53,8 +53,8 @@ export default class Item extends Component {
           <div style={{marginTop: 15}}>
             <span className="text-bold">Recent Forks</span>
             <ul className="list-style-none" style={{marginTop: 10}}>
-              {this.state.forks.map(fork => (
-                <li style={{display: 'inline-block'}}>
+              {this.state.forks.map((fork, index) => (
+                <li key={index} style={{display: 'inline-block'}}>
                   <img className="avatar avatar-small" width="32" height="32" src={fork.owner.avatar_url}/>
                   &nbsp;
                   <a target="_blank" href={fork.html_url} style={{color: '#424242'}}>{fork.owner.login}</a>
