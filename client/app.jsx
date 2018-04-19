@@ -1,4 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Main from './components/main.jsx';
 
-ReactDOM.render(<h1>Welcome</h1>, document.getElementById('app'));
+import 'bootstrap/dist/css/bootstrap.css';
+
+ReactDOM.render(<Main />, document.getElementById('app'));
