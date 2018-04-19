@@ -57,7 +57,7 @@ export default class Item extends Component {
                 <li style={{display: 'inline-block'}}>
                   <img className="avatar avatar-small" width="32" height="32" src={fork.owner.avatar_url}/>
                   &nbsp;
-                  <a href={fork.html_url} style={{color: '#424242'}}>{fork.owner.login}</a>
+                  <a target="_blank" href={fork.html_url} style={{color: '#424242'}}>{fork.owner.login}</a>
                   &nbsp;&nbsp;
                 </li>
               ))}
