@@ -37,18 +37,22 @@ export default class Item extends Component {
       }
       tags[files[name].language] = '';
     })
-    return Object.keys(tags).map(tag => <span className="badge badge-secondary">{tag}</span>)
+    return Object.keys(tags).map(tag => <React.Fragment><span className="Label Label--gray-darker">{tag}</span>&nbsp;&nbsp;</React.Fragment>)
   }
 
   render() {
     let { gist } = this.props;
     return (
-      <div>
-        <p>{Object.keys(gist.files)[0]} {this.renderTags(gist.files)}</p>
+      <li className="Box-row">
+        <a target="_blank" href={gist.html_url}>
+          <strong>{Object.keys(gist.files)[0]}</strong>
+        </a>
+        &nbsp;&nbsp;
+        {this.renderTags(gist.files)}
         <ul>
           {this.state.forks.map(fork => <li>{fork.owner.login}</li>)}
         </ul>
-      </div>
+      </li>
     )
   }
 }
