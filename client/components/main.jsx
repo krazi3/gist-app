@@ -36,6 +36,17 @@ export default class Main extends Component {
       })
   }
 
+  renderTags(files) {
+    let tags = {};
+    Object.keys(files).forEach(name => {
+      if(Object.keys(tags).length == 3) {
+        return;
+      }
+      tags[files[name].language] = '';
+    })
+    return Object.keys(tags).map(tag => <span className="badge badge-secondary">{tag}</span>)
+  }
+
   render() {
     return (
       <div className="container">
@@ -44,7 +55,7 @@ export default class Main extends Component {
           <label>Enter Github Username</label>
           <input name="username" type="text" value={this.state.username} onChange={event => this.setState({username: event.target.value})}/>
           <button>Search</button>
-          {this.state.gists.map(gist => <p>{Object.keys(gist.files)[0]}</p>)}
+          {this.state.gists.map(gist => <p>{Object.keys(gist.files)[0]} {this.renderTags(gist.files)}</p>)}
           {this.state.navigation.prev ? <button type="button" onClick={event => this.search(event, this.state.navigation.prev)}>Prev</button> : null}
           {this.state.navigation.next ? <button type="button" onClick={event => this.search(event, this.state.navigation.next)}>Next</button> : null}
         </form>
